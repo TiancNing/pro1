@@ -17,17 +17,28 @@ def myrange(*args):
         start = args[0]
         end = args[1]
         jump=args[2]
+    elif len(args)==0:
+        pass
     else:
         print("输入有误")
-    i=start
+
     l=[]
-    while i<end:
-        l.append(i)
-        i+=jump
-    print(l)
+    if jump<0:
+        i=start
+        while i>end:
+            l.append(i)
+            i+=jump
+    else:
+        i = start
+        while i<end:
+            l.append(i)
+            i+=jump
+    return l
 def fun2(*args):
+
     print(args)
 if __name__ == '__main__':
-    myrange(2,12,2)
+    for i in myrange(7,1,-1):
+        print(i,end=' ')
     # square(4,5,'♥')
     # fun2(4,25,'das','das')
