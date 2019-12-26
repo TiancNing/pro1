@@ -45,6 +45,9 @@ def gotocart():
             for k in sp.keys():
                 if k==id:
                     jud=1
+            if jud==1:
+                break
+        jud1=0
         if jud==0:
             cart_dict={id:{'name':product_info[id]['name'],'unitprice':product_info[id]['price'],'count':num,'price':product_info[id]['price']*num}}
             cart.append(cart_dict)
@@ -52,8 +55,11 @@ def gotocart():
             for sp in cart:
                 for k in sp.keys():
                     if k == id:
+                        jud1=1
                         sp[id]['count']=sp[id]['count']+num
                         sp[id]['price']=sp[id]['unitprice']*sp[id]['count']
+                if jud1==1:
+                    break
         print('添加购物车成功,是否继续:(Y/N)')
         jud=input()
         if jud.upper()=='N':
