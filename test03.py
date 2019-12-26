@@ -34,11 +34,36 @@ def myrange(*args):
             l.append(i)
             i+=jump
     return l
-def fun2(*args):
-
+def fun2(*args,p,w):
     print(args)
+    print(p)
+    print(w)
+def fun3(*,name,pwd):
+    print(name,pwd)
+def fun4(**kwargs):
+    print(kwargs)
+def fun5(a,b,c=1,*args,name,age,sex='男',**kwargs):
+    print('a',a)
+    print('b',b)
+    print('c',c)
+    print('args',args)
+    print('name',name)
+    print('age',age)
+    print('sex',sex)
+    print('kwargs',kwargs)
 if __name__ == '__main__':
-    for i in myrange(7,1,-1):
-        print(i,end=' ')
+    s=[{101:{'pricee':10}}]
+    for a in s:
+        for k,v in a.items():
+            if k==101:
+                a[101]['price']=2
+                print(a)
+    print(s)
+    #fun5(1,2,3,4,5,6,7,8,name='tcn',age='14',ll='d',zz='d')
+    #fun4(name='tcn',age=17)
+   # fun3(name='dsa',pwd='das')
+    #fun2(1,2,3,1,2,p=45,w=45)
+    #for i in myrange(7,1,-1):
+     #   print(i,end=' ')
     # square(4,5,'♥')
     # fun2(4,25,'das','das')
